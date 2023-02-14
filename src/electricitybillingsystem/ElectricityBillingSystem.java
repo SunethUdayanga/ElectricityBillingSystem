@@ -84,26 +84,12 @@ public class ElectricityBillingSystem  {
         frame.setVisible(true);
         frame.setSize(500, 300);
         label3.setFont(new Font("Verdana", Font.PLAIN, 18));
+        frame.setLocationRelativeTo(null);
         
-        
-        
-        
-        
-                       
+                   
         
     }
     
-//    @Override
-//    public void actionPerformed(ActionEvent e) {
-//        
-//            
-//        
-//        
-//        frame.dispose();
-//        SignInMain signin = new SignInMain();
-//        signin.setVisible(true);
-//        
-//    }
     
     
     
@@ -111,6 +97,8 @@ public class ElectricityBillingSystem  {
         // TODO code application logic here
         new ElectricityBillingSystem();
     }
+
+    
 
 
     
