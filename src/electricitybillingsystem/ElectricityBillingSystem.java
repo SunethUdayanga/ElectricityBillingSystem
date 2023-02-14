@@ -20,6 +20,8 @@ import javax.swing.JPanel;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 
 
 
@@ -55,7 +57,7 @@ public class ElectricityBillingSystem  {
         btnReg.addActionListener(new ActionListener() {  
             @Override
             public void actionPerformed(ActionEvent e) {
-                 frame.dispose();
+                frame.dispose();
                 SignInMain signin = new SignInMain();
                 signin.setVisible(true);
             }});
@@ -64,6 +66,26 @@ public class ElectricityBillingSystem  {
         //btnLin.addActionListener(this);
         JButton btnAdm = new JButton("ADMIN");
         //btnAdm.addActionListener(this);
+        btnAdm.addActionListener(new ActionListener() {  
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                
+                String message = "Please enter admin password.";
+                String APass = JOptionPane.showInputDialog(frame, message,"Login", JOptionPane.OK_CANCEL_OPTION);
+                label4.setText(APass);
+                if (APass == "1234") {
+                    frame.dispose();
+                    AdminPanel APanel = new AdminPanel();
+                    APanel.setVisible(true);
+                
+                }
+                
+                //frame.dispose();
+//                String APass = JOptionPane.showInputDialog("Enter Admin Password");
+//                String APasss = JOptionPane.showConfirmDialog("Enter Admin Password", "Enter Password");
+//                label4.setText(APass);
+                
+            }});   
         
         
         panel.setBorder(BorderFactory.createEmptyBorder(50,100,30,100));

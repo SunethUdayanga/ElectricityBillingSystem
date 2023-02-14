@@ -59,8 +59,6 @@ public class LogInMain extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jLabel2.setText("jLabel2");
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
-
         jLabel3.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jLabel3.setText("Electricity Account No");
 
