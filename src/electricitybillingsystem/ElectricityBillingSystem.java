@@ -21,7 +21,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
+
 
 
 
@@ -51,19 +51,31 @@ public class ElectricityBillingSystem  {
         
         
         
-        JButton btnReg = new JButton("LOGIN");
+        JButton btnLin = new JButton("LOGIN");
         //btnReg.addActionListener(this);
         
+        btnLin.addActionListener(new ActionListener() {  
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                LogInMain login = new LogInMain();
+                login.setVisible(true);
+                
+                
+            }});
+     
+        JButton btnReg = new JButton("REGISTER");
+        //btnLin.addActionListener(this);
         btnReg.addActionListener(new ActionListener() {  
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
                 SignInMain signin = new SignInMain();
                 signin.setVisible(true);
+                
             }});
-     
-        JButton btnLin = new JButton("REGISTER");
-        //btnLin.addActionListener(this);
+        
+        
         JButton btnAdm = new JButton("ADMIN");
         //btnAdm.addActionListener(this);
         btnAdm.addActionListener(new ActionListener() {  
@@ -72,12 +84,15 @@ public class ElectricityBillingSystem  {
                 
                 String message = "Please enter admin password.";
                 String APass = JOptionPane.showInputDialog(frame, message,"Login", JOptionPane.OK_CANCEL_OPTION);
-                label4.setText(APass);
-                if (APass == "1234") {
+                
+                if (APass.equals("1234")) {
                     frame.dispose();
                     AdminPanel APanel = new AdminPanel();
                     APanel.setVisible(true);
                 
+                }
+                else {
+                    label4.setText("Wrong Password");
                 }
                 
                 //frame.dispose();
@@ -92,9 +107,9 @@ public class ElectricityBillingSystem  {
         panel.setLayout(new GridLayout(7,1));
         panel.add(label3);
         panel.add(label4);
-        panel.add(btnReg);
-        panel.add(label1);
         panel.add(btnLin);
+        panel.add(label1);
+        panel.add(btnReg);
         panel.add(label2);
         panel.add(btnAdm);
         
